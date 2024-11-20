@@ -63,7 +63,8 @@ namespace _20_11_2024
 
             int n = 0;
             int m = 0;
-            int sumaSzescianow = 0;
+            double sumaSzescianow = 0;
+            double suma = 0;
 
             Console.WriteLine("Program oblicza sumę sześcianów liczb naturalnych zawartych między n, a m: (n^3 + (n+1)^3 + ... + m^3");
 
@@ -82,11 +83,13 @@ namespace _20_11_2024
             for (int i = n; i <= m; i++)
             {
                 Console.WriteLine("iteracja: {0}",i);
-                Console.WriteLine("Suma: {0}\n",Math.Pow(i,3));
+                Console.WriteLine("Potega: {0}\n",Math.Pow(i,3));
+                sumaSzescianow = Math.Pow(i,3);
+                suma += sumaSzescianow;
             }
 
-            Console.ReadLine(); 
-
+            Console.WriteLine("Suma szescianów: {0}",suma);
+            Console.ReadLine();
 
         }
     }
