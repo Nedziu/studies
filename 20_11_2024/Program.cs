@@ -85,7 +85,7 @@ namespace _20_11_2024
                 Console.WriteLine("iteracja: {0}",i);
                 Console.WriteLine("Potega: {0}\n",Math.Pow(i,3));
                 sumaSzescianow = Math.Pow(i,3);
-                suma += sumaSzescianow;
+                suma += sumaSzescianow; // suma = suma + sumaSzescianow
             }
 
             Console.WriteLine("Suma szescianów: {0}",suma);
