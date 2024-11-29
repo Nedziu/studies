@@ -62,6 +62,8 @@ namespace cw_3
 
             // TODO: Histogram
 
+
+            /*
             Console.WriteLine("Program rysuje histogram.");
 
             int dlugoscCiagu = 0;
@@ -85,7 +87,6 @@ namespace cw_3
                 histogram[liczbaDoTablicy-1]++; // lDT = 3 , 3-1 = pozycja w tablicy, ++ to podniesienie o jeden tej pozycji
             }
 
-
             Console.WriteLine("Rysuje histogram");
 
             for (int i = 0; i < histogram.Length; i++)
@@ -98,6 +99,8 @@ namespace cw_3
                 Console.WriteLine();    
             }
             Console.ReadLine();
+
+            */
 
             //ZADANIE 4 
 
@@ -172,34 +175,79 @@ namespace cw_3
             */
 
 
-             /* 
-            Console.WriteLine("Program znajduje najmniejsza i największą liczbę w ciągu a1, a2, ... , an. Liczby a1, a2, ... ,an są liczbami losowymi (zakładam ciąg podany przez użytkownika)\n");
-            
-            Random liczbaLosowa = new Random();
-            int dlugoscCiagu = 0;   
-            Console.WriteLine("Podaj n liczb (dlugosc ciagu)");
+            /* 
+           Console.WriteLine("Program znajduje najmniejsza i największą liczbę w ciągu a1, a2, ... , an. Liczby a1, a2, ... ,an są liczbami losowymi (zakładam ciąg podany przez użytkownika)\n");
 
-            while (!int.TryParse(Console.ReadLine(), out dlugoscCiagu))
+           Random liczbaLosowa = new Random();
+           int dlugoscCiagu = 0;   
+           Console.WriteLine("Podaj n liczb (dlugosc ciagu)");
+
+           while (!int.TryParse(Console.ReadLine(), out dlugoscCiagu))
+           {
+               Console.WriteLine("Nie podałes prawidłowej liczby, spróbuj ponownie");
+           }
+           int[] tablica = new int[dlugoscCiagu];
+
+           for (int i = 0; i < tablica.Length; i++)
+           {
+               tablica[i] = liczbaLosowa.Next(1,1000);
+           }
+
+           foreach (int i in tablica)
+           {
+               Console.WriteLine(tablica[i]);
+           }
+
+
+           Console.ReadLine();
+
+           */
+
+
+               
+            Console.WriteLine("Program wyświetla na ekranie figurę o wymiarach a i b podanych przez uzytkownika. Figura ma składać się naprzemiennie z linii zbudowanych z dwóch znaków podanych przez użytkownika. Należy sprawdzać poprawność wprowadzonych liczb. \nPrzykładowe działanie programu: \nPodaj wysokość a = 4\nPodaj szerokość b = 6\nPodaj pierwszy znak = &\nPodaj drugi znak = $");
+
+            int wysokosc = 0;
+            int dlugosc = 0;
+            string pierwszyZnak;
+            string drugiZnak;
+
+            Console.WriteLine("Podaj wysokość: ");
+            while (!int.TryParse(Console.ReadLine(), out wysokosc) || wysokosc < 0)
             {
-                Console.WriteLine("Nie podałes prawidłowej liczby, spróbuj ponownie");
+                Console.WriteLine("Podano nie prawidłową liczbę, spróbuj ponownie podając ją wyższą od zera. ");
             }
-            int[] tablica = new int[dlugoscCiagu];
 
-            for (int i = 0; i < tablica.Length; i++)
+            Console.WriteLine("Podaj długość: ");
+            while (!int.TryParse(Console.ReadLine(), out dlugosc) || dlugosc < 0)
             {
-                tablica[i] = liczbaLosowa.Next(1,1000);
+                Console.WriteLine("Podano nie prawidłową liczbę, spróbuj ponownie podając ją wyższą od zera. ");
             }
 
-            foreach (int i in tablica)
+            Console.WriteLine("Podaj pierwszy znak: ");
+            pierwszyZnak = Console.ReadLine();
+
+            Console.WriteLine("Podaj drugi znak: ");
+            drugiZnak = Console.ReadLine();
+
+            for (int i = 0; i < wysokosc; i++)
             {
-                Console.WriteLine(tablica[i]);
+                for (int j = 0; j < dlugosc; j++)
+                {
+                    if ((j + i) % 2 == 0)
+                    {
+                        Console.Write(pierwszyZnak);
+                    }
+                    else if ((j+i) % 2 == 1)
+                    {
+                        Console.Write(drugiZnak);
+                    }
+                }
+                Console.WriteLine();
             }
-
-
             Console.ReadLine();
 
-            */
-
+               
         }
     }
 }
