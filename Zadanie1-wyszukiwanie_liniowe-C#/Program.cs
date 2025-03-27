@@ -51,7 +51,7 @@ namespace Zadanie1_wyszukiwanie_liniowe_C_
             Console.WriteLine($"Czas wyszukiwania binarnego - pierwszy element: {binaryFirstTime:F6} ms");
             Console.WriteLine($"Czas wyszukiwania binarnego - ostatni element: {binaryLastTime:F6} ms");
 
-            //GenerateCsv(linearFirstTime, linearLastTime, binaryFirstTime, binaryLastTime);
+            GenerateCsv(linearFirstTime, linearLastTime, binaryFirstTime, binaryLastTime);
         }
 
         static int LinearSearch(int[] array, int target)
@@ -84,20 +84,20 @@ namespace Zadanie1_wyszukiwanie_liniowe_C_
             return -1;
         }
 
-        //static void GenerateCsv(double linearFirst, double linearLast, double binaryFirst, double binaryLast)
-        //{
-        //    string filePath = "wyniki_wyszukiwania.csv";
-        //    var lines = new List<string>
-        //    {
-        //        "Algorytm,Element,Czas (ms)",
-        //        $"Wyszukiwanie liniowe,Pierwszy,{linearFirst:F6}",
-        //        $"Wyszukiwanie liniowe,Ostatni,{linearLast:F6}",
-        //        $"Wyszukiwanie binarne,Pierwszy,{binaryFirst:F6}",
-        //        $"Wyszukiwanie binarne,Ostatni,{binaryLast:F6}"
-        //    };
+        static void GenerateCsv(double linearFirst, double linearLast, double binaryFirst, double binaryLast)
+        {
+            string filePath = "wyniki_wyszukiwania.csv";
+            var lines = new List<string>
+            {
+                "Algorytm,Element,Czas (ms)",
+                $"Wyszukiwanie liniowe,Pierwszy,{linearFirst:F6}",
+                $"Wyszukiwanie liniowe,Ostatni,{linearLast:F6}",
+                $"Wyszukiwanie binarne,Pierwszy,{binaryFirst:F6}",
+                $"Wyszukiwanie binarne,Ostatni,{binaryLast:F6}"
+            };
 
-        //    File.WriteAllLines(filePath, lines);
-        //    Console.WriteLine($"Dane zostały zapisane do pliku {filePath}");
-        //}
+            File.WriteAllLines(filePath, lines);
+            Console.WriteLine($"Dane zostały zapisane do pliku {filePath}");
+        }
     }
 }
